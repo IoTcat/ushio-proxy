@@ -9,7 +9,9 @@ app.use(express.static(__dirname + '/public'));
 app.get('/get/', (req, res) => {
 
     if(req.query.hasOwnProperty('url')){
-        request(new Buffer(req.query.url, 'base64').toString(), req.headers).pipe(res);
+        let web = request(new Buffer(req.query.url, 'base64').toString(), req.headers);
+        req.pipe(web);
+        web.pipe(res);
     }
 
 })
