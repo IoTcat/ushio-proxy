@@ -4,10 +4,12 @@ const app = express()
 const port = 3000
 
 app.listen(port, () => console.log(`Ushio-proxy listening at http://localhost:${port}`))
+app.use(express.static(__dirname + '/public'));
 
+app.get('/get/', (req, res) => {
 
-app.get('/', (req, res) => {
-
-    request(req.query.url).pipe(res);
+    if(req.query.hasOwnProperty('url')){
+        request(new Buffer(req.query.url, 'base64').toString()).pipe(res);
+    }
 
 })
