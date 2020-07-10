@@ -14,14 +14,19 @@
 		</div>
 		<div class="apTitle">请输入链接：</div>
 		<div class="logcon"><input type="text" id="url" placeholder="链接">
-		<button type="button" id="btn">Goto</button></div>
+		<button type="button" id="btn">生成</button></div>
+        <input type="text" id="res">
+
 		
 
 		<!-- scripts -->
 		<script src="https://cdn.yimian.xyz/ushio-js/ushio-footer.min.js"></script>
 		<script>
+            $('#res').hide();
 			$('#btn').click(function(){
-				window.location.href="./get/?url="+window.btoa($('#url').val());;
+				//window.location.href="./get/?url="+window.btoa($('#url').val());;
+                $('#res').show();
+                $('#res').val("./get/?url="+window.btoa($('#url').val()));
 			})
 		</script>
 
