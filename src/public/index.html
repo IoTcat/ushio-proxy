@@ -14,19 +14,18 @@
 		</div>
 		<div class="apTitle">请输入链接：</div>
 		<div class="logcon"><input type="text" id="url" placeholder="链接">
-		<button type="button" id="btn">生成</button></div>
-        <input type="text" id="res">
+		<button type="button" id="btn">生成</button>
+    </div>
 
 		
 
 		<!-- scripts -->
 		<script src="https://cdn.yimian.xyz/ushio-js/ushio-footer.min.js"></script>
 		<script>
-            $('#res').hide();
 			$('#btn').click(function(){
 				//window.location.href="./get/?url="+window.btoa($('#url').val());;
-                $('#res').show();
-                $('#res').val("./get/?url="+window.btoa($('#url').val()));
+                if($('#url').val().indexOf("proxy.yimian.xyz") == -1)
+                $('#url').val("https://proxy.yimian.xyz/get/?url="+window.btoa($('#url').val()));
 			})
 		</script>
 
