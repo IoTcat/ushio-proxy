@@ -26,7 +26,10 @@
 			$('#btn').click(function(){
 				//window.location.href="./get/?url="+window.btoa($('#url').val());;
                 if($('#url').val().indexOf("proxy.yimian.xyz") == -1){
-                        $('#url').val("https://proxy.yimian.xyz/get/?url="+window.btoa($('#url').val()));
+                    if($('#url').val().substr(0, 4) != 'http'){
+                        $('#url').val('http://'+$('#url').val());
+                    }
+                    $('#url').val("https://proxy.yimian.xyz/get/?url="+window.btoa($('#url').val()));
                 }
 			})
 		</script>
