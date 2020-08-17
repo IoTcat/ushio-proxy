@@ -9,7 +9,13 @@ app.use(express.static(__dirname + '/public'));
 app.get('/get/', (req, res) => {
 
     if(req.query.hasOwnProperty('url')){
-        let web = request(new Buffer(req.query.url, 'base64').toString(), req.headers);
+        if(req.query.url.substr(0, 4) != 'http'){
+            req.query.url = 'http://'+req.query.url;
+        }
+        if(/http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/.test(req.query.url))
+            var web = request(req.query.url, req.headers);
+        else
+            var web = request(new Buffer(req.query.url, 'base64').toString(), req.headers);
         req.pipe(web);
         web.pipe(res);
     }

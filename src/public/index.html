@@ -6,6 +6,7 @@
 		<link rel="stylesheet" media="screen" href="css/login.css">
 		<script type="text/javascript">block_aplayer = true</script>
 		<script src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
+        <script>page.auth = ['any'];</script>
 	</head>
 	<body>
 		<!-- particles.js container -->
@@ -24,8 +25,9 @@
 		<script>
 			$('#btn').click(function(){
 				//window.location.href="./get/?url="+window.btoa($('#url').val());;
-                if($('#url').val().indexOf("proxy.yimian.xyz") == -1)
-                $('#url').val("https://proxy.yimian.xyz/get/?url="+window.btoa($('#url').val()));
+                if($('#url').val().indexOf("proxy.yimian.xyz") == -1){
+                        $('#url').val("https://proxy.yimian.xyz/get/?url="+window.btoa($('#url').val()));
+                }
 			})
 		</script>
 
