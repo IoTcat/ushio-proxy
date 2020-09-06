@@ -2,20 +2,21 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Ushio-Proxy</title>
+		<title>Ushio - Proxy</title>
 		<link rel="stylesheet" media="screen" href="css/login.css">
-		<script type="text/javascript">block_aplayer = true</script>
+		<script type="text/javascript">block_aplayer = true; lang = ['zh', 'en'];</script>
 		<script src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
-        <script>page.auth = ['any'];</script>
+		<script type="text/javascript">page.proj = 'iotcat/ushio-proxy';</script>
+        <script>//page.auth = ['any'];</script>
 	</head>
 	<body>
 		<!-- particles.js container -->
 		<div id="particles-js" style="display: flex;align-items: center;justify-content: center">
 			<canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;" width="472" height="625"></canvas>
 		</div>
-		<div class="apTitle">请输入链接：</div>
-		<div class="logcon"><input type="text" id="url" placeholder="链接">
-		<button type="button" id="btn">生成</button>
+		<div class="apTitle"><span class=".zh">请输入链接：</span><span class=".en">Input the link you want to shorten</span></div>
+		<div class="logcon"><input type="text" id="url" placeholder="https://xxx.xx/xx/xx">
+		<button type="button" id="btn"><span class=".zh">生成</span><span class=".en">Generate</span></button>
     </div>
 
 		
